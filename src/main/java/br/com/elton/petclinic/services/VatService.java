@@ -4,12 +4,7 @@ import br.com.elton.petclinic.model.Vet;
 
 import java.util.Set;
 
-public interface VatService {
+public interface VatService extends CrudService<Vet, Long> {
 
-    Vet findById(Long id);
-
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
 
 }
