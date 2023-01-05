@@ -85,6 +85,7 @@
         </plugins>
     </build>
     <scm>
+        <connection>scm:git:git://github.com/EltonSilva2020/petclinic.git</connection>
         <developerConnection>scm:git:git@github.com:EltonSilva2020/petclinic.git</developerConnection>
       <tag>petclinic-0.0.1</tag>
   </scm>
