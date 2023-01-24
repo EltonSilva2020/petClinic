@@ -1,6 +1,6 @@
-package br.com.elton.sfgpetclinic.services;
+package be.com.elton.sfgpetclinic.services;
 
-import br.com.elton.sfgpetclinic.model.Owner;
+import be.com.elton.sfgpetclinic.model.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long> {
 

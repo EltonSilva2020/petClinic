@@ -1,4 +1,4 @@
-package br.com.elton.sfgpetclinic.model;
+package be.com.elton.sfgpetclinic.model;
 
 
 import javax.persistence.*;

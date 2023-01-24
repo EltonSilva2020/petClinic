@@ -1,4 +1,4 @@
-package br.com.elton.sfgpetclinic;
+package be.com.elton.sfgpetclinic;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
