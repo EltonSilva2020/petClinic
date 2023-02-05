@@ -93,6 +93,12 @@
             <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>be.com.elton</groupId>
+            <artifactId>pet-clinic-date</artifactId>
+            <version>0.0.5-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

@@ -9,9 +9,9 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @Data
 @NoArgsConstructor
+@Entity
 @Table(name = "pets")
 public class Pet extends AbstractModel {
 
@@ -31,14 +31,14 @@ public class Pet extends AbstractModel {
     private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
-    private Set<Visit> visits;
+    private Set<Visit> visits = new HashSet<>();
 
-    public Pet(String name, PetType petType, Owner owner, LocalDate birthDate) {
+    public Pet(String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
+
         this.name = name;
         this.petType = petType;
         this.owner = owner;
         this.birthDate = birthDate;
-        this.visits = new HashSet<>();
 
         if (visits == null || visits.size() > 0) {
             this.visits = visits;

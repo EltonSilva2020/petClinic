@@ -1,11 +1,15 @@
 package be.com.elton.sfgpetclinic.service.map;
 
 import be.com.elton.sfgpetclinic.model.Pet;
-import be.com.elton.sfgpetclinic.service.CrudService;
+import be.com.elton.sfgpetclinic.service.PetService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+@Profile({"default", "map"})
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
@@ -18,7 +22,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
