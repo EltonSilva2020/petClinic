@@ -1,7 +1,8 @@
 package be.com.elton.sfgpetclinic.model;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -9,7 +10,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @Entity
 @Table(name = "pets")
