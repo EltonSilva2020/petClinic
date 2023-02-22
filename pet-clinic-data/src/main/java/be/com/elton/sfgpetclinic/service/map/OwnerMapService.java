@@ -5,19 +5,16 @@ import be.com.elton.sfgpetclinic.model.Pet;
 import be.com.elton.sfgpetclinic.service.OwnerService;
 import be.com.elton.sfgpetclinic.service.PetService;
 import be.com.elton.sfgpetclinic.service.PetTypeService;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
-@Service
-@Profile({"default", "map"})
-public class OnwerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OnwerMapService(PetTypeService petTypeService, PetService petService) {
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
     }
@@ -25,6 +22,11 @@ public class OnwerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
+    }
+
+    @Override
+    public Owner findById(Long id) {
+        return super.findById(id);
     }
 
     @Override
@@ -55,7 +57,6 @@ public class OnwerMapService extends AbstractMapService<Owner, Long> implements 
         }
     }
 
-
     @Override
     public void delete(Owner object) {
         super.delete(object);
@@ -63,16 +64,23 @@ public class OnwerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public void deleteById(Long id) {
-        super.deleteByid(id);
+        super.deleteById(id);
     }
 
     @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
+    public Owner findByLastName(String lastName) {
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
-    public Owner findByLastName(String name) {
+    public List<Owner> findAllByLastNameLike(String lastName) {
+
+        //todo - impl
         return null;
     }
+
 }

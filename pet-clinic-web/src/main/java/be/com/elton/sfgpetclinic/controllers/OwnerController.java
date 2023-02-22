@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OwnerController {
 
+    private static final String CATEGORY_ENDPOINT = "/owners";
+    private static final String CATEGORY_ENDPOINT_ID = CATEGORY_ENDPOINT + "/{id}";
     private final OwnerService ownerService;
 
     public OwnerController(OwnerService ownerService) {
@@ -29,4 +31,5 @@ public class OwnerController {
 
         return "notimplemented";
     }
+
 }

@@ -43,7 +43,7 @@ public abstract class AbstractMapService<T extends AbstractModel, ID extends Lon
     }
 
 
-    void deleteByid(ID id) {
+    void deleteById(ID id) {
         map.remove(id);
     }
 
